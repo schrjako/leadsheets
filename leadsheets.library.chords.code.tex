@@ -224,6 +224,8 @@
       { \prg_return_false: }
   }
 
+\NewDocumentCommand \recordingchords {mm} {\leadsheets_if_record_chords:TF {#1} {#2} }
+
 \prg_new_conditional:Npnn \leadsheets_if_recall_chords: {T,F,TF}
   {
     \bool_if:nTF
@@ -238,6 +240,8 @@
       { \prg_return_true: }
       { \prg_return_false: }
   }
+
+\NewDocumentCommand \recallingchords {mm} {\leadsheets_if_recall_chords:TF {#1} {#2} }
 
 \cs_new_protected:Npn \leadsheets_recall_chord:nn #1#2
   {

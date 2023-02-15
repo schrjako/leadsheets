@@ -250,6 +250,13 @@
       { \leadsheets_chord_write:V \l__leadsheets_tmpa_tl }
   }
 
+\NewDocumentCommand \recallingchords {mm}
+	{
+		\leadsheets_if_recall_chords:TF
+			{ #1 }
+			{ #2 }
+	}
+
 \NewDocumentCommand \recallchord {st-}
   { \leadsheets_recall_chord:nn {#1} {#2} }
 

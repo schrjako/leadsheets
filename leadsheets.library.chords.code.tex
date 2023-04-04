@@ -239,7 +239,7 @@
       { \prg_return_false: }
   }
 
-\cs_new_protected:Npn \leadsheets_recall_chord:nn #1#2
+\cs_new_protected:Npn \leadsheets_recall_chord:nnn #1#2#3
   {
     \seq_pop_left:NNF \g__leadsheets_chords_sequences_seq
       \l__leadsheets_tmpa_tl
@@ -248,6 +248,7 @@
       {#1}
       {#2}
       { \leadsheets_chord_write:V \l__leadsheets_tmpa_tl }
+      { #3 }
   }
 
 \NewDocumentCommand \recallingchords {mm}
@@ -258,7 +259,7 @@
 	}
 
 \NewDocumentCommand \recallchord {st-}
-  { \leadsheets_recall_chord:nn {#1} {#2} }
+  { \leadsheets_recall_chord:nnn {#1} {#2} }
 
 \cs_new_protected:Npn \leadsheets_skip_chord:nn #1#2
   {
